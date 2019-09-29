@@ -1,36 +1,4 @@
 <h1> Edit Existing Article </h1>
 
 
-<% if @article.errors.any? %>
-
-<h2>The following errors prevented the article from getting created</h2>
-
-<ul>
-
-<% @article.errors.full_messages.each do |msg| %>
-
-<li><%= msg %></li>
-
-<% end %>
-
-</ul>
-
-<% end %>
-
-<%= form_for @article do |form| %>
-    <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-    </p>
-   
-    <p>
-      <%= form.label :text %><br>
-      <%= form.text_area :text %>
-    </p>
-   
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
-
-  <%= link_to "Back to Articles Listing Page", articles_path%>
+<%= render 'form'%>
